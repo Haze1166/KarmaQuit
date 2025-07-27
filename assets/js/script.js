@@ -49,6 +49,29 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.5 // Trigger when 50% of the counter is visible
     });
     
+    // ... (your existing JS code for reveal and counter)
+
+// --- Feature 3: Live Lung Interaction ---
+const healingSlider = document.getElementById('healing-slider');
+const healthyLungLayer = document.getElementById('healthy-lung-layer');
+
+if (healingSlider && healthyLungLayer) {
+    // Function to update the lung's appearance
+    const updateLungHealing = (percentage) => {
+        // We invert the percentage because clip-path's `inset` clips from the top.
+        // A 100% healed lung should have 0% clipping.
+        const clipPercentage = 100 - percentage;
+        healthyLungLayer.style.setProperty('--healing-progress', `${clipPercentage}%`);
+    };
+
+    // Set the initial state based on the slider's default value
+    updateLungHealing(healingSlider.value);
+
+    // Add an event listener to update on drag
+    healingSlider.addEventListener('input', (event) => {
+        updateLungHealing(event.target.value);
+    });
+}
     // Start observing the counter element
     if (streakCounter) {
         counterObserver.observe(streakCounter);

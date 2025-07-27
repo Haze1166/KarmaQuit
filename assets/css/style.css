@@ -10,7 +10,7 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 @keyframes fadeInUp {
@@ -56,4 +56,32 @@ body {
 .reveal.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+/* --- Live Lung Styles --- */
+#healthy-lung-layer {
+    /* This is the magic: we create a "mask" that cuts the image from the bottom up.
+       The --healing-progress variable will be controlled by JavaScript. */
+    clip-path: inset(var(--healing-progress, 100%) 0 0 0);
+    transition: clip-path 0.1s linear; /* Smooths the slider interaction */
+}
+
+/* --- Styling for the Slider --- */
+#healing-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #34d399; /* Healthy green color */
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+#healing-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #34d399;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 2px solid #fff;
 }
