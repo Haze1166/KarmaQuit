@@ -1,103 +1,416 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KarmaQuit - The Game That Helps You Quit Smoking</title>
-    <meta name="description" content="A new app that turns quitting smoking into a daily game with competitive leaderboards and a chance to help cancer patients.">
-    
+    <meta
+      name="description"
+      content="A new app that turns quitting smoking into a daily game with competitive leaderboards and a chance to help cancer patients."
+    />
+
     <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Our Custom Stylesheet -->
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body class="bg-slate-900 text-gray-300 relative">
-
-    <!-- Background Glows -->
-    <div class="glow top-0 left-0 -translate-x-1/2 -translate-y-1/2"></div>
-    <div class="glow bottom-0 right-0 translate-x-1/2 translate-y-1/2 anim-delay-2s"></div>
+    <!-- Custom CSS for Animations and Gradients -->
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        overflow-x: hidden; /* Prevents horizontal scroll from glowing elements */
+      }
+      .gradient-text {
+        background: linear-gradient(90deg, #38bdf8, #34d399);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-fadeInUp {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      .animate-delay-200 {
+        animation-delay: 0.2s;
+      }
+      .animate-delay-400 {
+        animation-delay: 0.4s;
+      }
+      .animate-delay-600 {
+        animation-delay: 0.6s;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-900 text-gray-300 relative">
+    <!-- Background Glows for Professional Feel -->
+    <div
+      class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/20 rounded-full filter blur-3xl -z-10"
+    ></div>
+    <div
+      class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-blue-600/20 rounded-full filter blur-3xl -z-10"
+    ></div>
 
     <!-- Header -->
-    <header class="container mx-auto p-6 flex justify-between items-center animate-fadeInUp">
-        <h1 class="text-2xl font-bold text-white">KarmaQuit</h1>
-        <a href="#features" class="hidden sm:block text-slate-400 hover:text-white transition">Features</a>
+    <header
+      class="container mx-auto p-6 flex justify-between items-center animate-fadeInUp"
+    >
+      <h1 class="text-2xl font-bold text-white">KarmaQuit</h1>
+      <a
+        href="#features"
+        class="hidden sm:block text-slate-400 hover:text-white transition"
+        >Features</a
+      >
     </header>
 
     <!-- Main Content -->
     <main class="container mx-auto px-6 py-16 md:py-24 text-center">
+      <!-- Hero Section -->
+      <section class="max-w-4xl mx-auto">
+        <h2
+          class="text-4xl md:text-6xl lg:text-7xl font-black mb-4 text-white leading-tight animate-fadeInUp"
+        >
+          Turn Willpower into <span class="gradient-text">Superpower.</span>
+        </h2>
+        <p
+          class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto animate-fadeInUp animate-delay-200"
+        >
+          The first app that turns quitting smoking into a daily game. Compete,
+          earn points for resisting, and help real cancer patients with every
+          urge you beat.
+        </p>
 
-        <!-- Hero Section -->
-        <section class="max-w-4xl mx-auto">
-            <h2 class="text-4xl md:text-6xl lg:text-7xl font-black mb-4 text-white leading-tight animate-fadeInUp">
-                Turn Willpower into <span class="gradient-text">Superpower.</span>
+        <!-- Signup Form -->
+        <form
+          action="https://formspree.io/f/your_unique_id"
+          method="POST"
+          class="max-w-md mx-auto flex flex-col sm:flex-row gap-4 animate-fadeInUp animate-delay-400"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+            required
+            class="flex-grow p-4 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-cyan-400 focus:outline-none transition"
+          />
+          <button
+            type="submit"
+            class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold p-4 rounded-lg hover:scale-105 transition-transform duration-300 shadow-lg shadow-cyan-500/20"
+          >
+            Get Early Access
+          </button>
+        </form>
+        <p
+          class="text-sm text-slate-500 mt-4 animate-fadeInUp animate-delay-400"
+        >
+          Join 1,000+ others on the waitlist. No spam, ever.
+        </p>
+      </section>
+
+      <!-- Phone Mockup Section -->
+      <section
+        class="mt-20 md:mt-32 flex justify-center animate-fadeInUp animate-delay-600"
+      >
+        <div
+          class="w-72 h-[550px] bg-slate-800 rounded-[40px] p-2 shadow-2xl shadow-black/30 border border-slate-700"
+        >
+          <div
+            class="w-full h-full bg-slate-900 rounded-[32px] flex flex-col justify-between p-6"
+          >
+            <!-- Mock App UI -->
+            <div class="text-left">
+              <h3 class="text-xl font-bold text-white">Your Streak</h3>
+              <p class="text-6xl font-black gradient-text">14</p>
+              <p class="text-slate-400">Days Smoke-Free</p>
+            </div>
+            <div
+              class="w-full h-24 bg-gradient-to-tr from-cyan-500/20 to-blue-600/20 rounded-lg flex items-center justify-center"
+            >
+              <p class="text-slate-300">Leaderboard Position: #2,341</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="py-20 sm:py-32">
+        <div class="container mx-auto px-6">
+          <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-white sm:text-4xl">
+              Everything You Need to Finally Quit
             </h2>
-            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl mx-auto animate-fadeInUp animate-delay-200">
-                The first app that turns quitting smoking into a daily game. Compete, earn points for resisting, and help real cancer patients with every urge you beat.
+            <p class="mt-4 text-lg text-slate-400">
+              KarmaQuit isn't just a counter; it's a complete ecosystem designed
+              to support you at every step.
             </p>
-            
-            <!-- Signup Form -->
-            <form action="https://formspree.io/f/your_unique_id" method="POST" class="max-w-md mx-auto flex flex-col sm:flex-row gap-4 animate-fadeInUp animate-delay-400">
-                <input type="email" name="email" placeholder="you@example.com" required class="flex-grow p-4 rounded-lg bg-slate-800 border border-slate-700 text-white focus:ring-2 focus:ring-cyan-400 focus:outline-none transition">
-                <button type="submit" class="bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold p-4 rounded-lg hover:scale-105 transition-transform duration-300 shadow-lg shadow-cyan-500/20">
-                    Get Early Access
-                </button>
-            </form>
-            <p class="text-sm text-slate-500 mt-4 animate-fadeInUp animate-delay-400">Join the waitlist. No spam, ever.</p>
-        </section>
-
-        <!-- Phone Mockup Section -->
-        <section class="mt-20 md:mt-32 flex justify-center animate-fadeInUp animate-delay-600">
-            <!-- JS will target this element to animate the counter -->
-            <div id="phone-mockup" class="w-72 h-[550px] bg-slate-800 rounded-[40px] p-2 shadow-2xl shadow-black/30 border border-slate-700">
-                <div class="w-full h-full bg-slate-900 rounded-[32px] flex flex-col justify-between p-6">
-                    <div class="text-left">
-                        <h3 class="text-xl font-bold text-white">Your Streak</h3>
-                        <!-- The counter will be animated by JS -->
-                        <p id="streak-counter" class="text-6xl font-black gradient-text">0</p>
-                        <p class="text-slate-400">Days Smoke-Free</p>
-                    </div>
-                    <div class="w-full h-24 bg-gradient-to-tr from-cyan-500/20 to-blue-600/20 rounded-lg flex items-center justify-center">
-                        <p class="text-slate-300">Leaderboard Position: #2,341</p>
-                    </div>
-                </div>
+          </div>
+          <div
+            class="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+          >
+            <!-- Feature 1: Gamified Scoring -->
+            <div
+              class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 reveal"
+            >
+              <div class="text-3xl font-bold gradient-text">🎯</div>
+              <h3 class="mt-4 text-xl font-semibold text-white">
+                Gamified Scoring
+              </h3>
+              <p class="mt-2 text-slate-400">
+                Turn every urge into a winnable game. Score points for resisting
+                and build a powerful, positive feedback loop.
+              </p>
             </div>
-        </section>
-
-        <!-- How It Works / Features Section -->
-        <section id="features" class="mt-24 md:mt-32 max-w-5xl mx-auto">
-            <h3 class="text-3xl md:text-4xl font-bold text-white mb-16 reveal">A Smarter Way to Quit</h3>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- JS will target 'reveal' elements -->
-                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 hover:border-cyan-400 transition-all hover:scale-105 reveal">
-                    <div class="text-4xl mb-4">🎯</div>
-                    <h4 class="text-xl font-bold text-white mb-2">Resist & Score</h4>
-                    <p class="text-slate-400">Get +1 point when you resist an urge. A simple choice with a powerful impact.</p>
-                </div>
-                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 hover:border-cyan-400 transition-all hover:scale-105 reveal">
-                    <div class="text-4xl mb-4">🏆</div>
-                    <h4 class="text-xl font-bold text-white mb-2">Global Leaderboards</h4>
-                    <p class="text-slate-400">See your name rise as your willpower grows stronger on a global stage.</p>
-                </div>
-                <div class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 hover:border-cyan-400 transition-all hover:scale-105 reveal">
-                    <div class="text-4xl mb-4">❤️</div>
-                    <h4 class="text-xl font-bold text-white mb-2">Donate & Help</h4>
-                    <p class="text-slate-400">Turn your victory into a good deed by donating the money you saved.</p>
-                </div>
+            <!-- Feature 2: Leaderboards -->
+            <div
+              class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 reveal"
+            >
+              <div class="text-3xl font-bold gradient-text">🏆</div>
+              <h3 class="mt-4 text-xl font-semibold text-white">
+                Social Leaderboards
+              </h3>
+              <p class="mt-2 text-slate-400">
+                You're not alone. Compete with friends or users globally. Climb
+                the ranks and prove your willpower.
+              </p>
             </div>
-        </section>
-
+            <!-- Feature 3: Karma Donations -->
+            <div
+              class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 reveal"
+            >
+              <div class="text-3xl font-bold gradient-text">❤️</div>
+              <h3 class="mt-4 text-xl font-semibold text-white">
+                Karma Donations
+              </h3>
+              <p class="mt-2 text-slate-400">
+                Connect your success to a greater good. Donate your saved
+                cigarette money to verified cancer funds.
+              </p>
+            </div>
+            <!-- Feature 4: AI Coach -->
+            <div
+              class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 reveal"
+            >
+              <div class="text-3xl font-bold gradient-text">🤖</div>
+              <h3 class="mt-4 text-xl font-semibold text-white">
+                AI-Powered Coach
+              </h3>
+              <p class="mt-2 text-slate-400">
+                Feeling weak? Our AI coach is available 24/7 to provide
+                motivation, guidance, and personalized tips.
+              </p>
+            </div>
+            <!-- Feature 5: Progress Analytics -->
+            <div
+              class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 reveal"
+            >
+              <div class="text-3xl font-bold gradient-text">📊</div>
+              <h3 class="mt-4 text-xl font-semibold text-white">
+                Progress Analytics
+              </h3>
+              <p class="mt-2 text-slate-400">
+                Visualize your journey. Track money saved, health regained, and
+                identify your personal trigger moments.
+              </p>
+            </div>
+            <!-- Feature 6: Community Support -->
+            <div
+              class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 reveal"
+            >
+              <div class="text-3xl font-bold gradient-text">🤝</div>
+              <h3 class="mt-4 text-xl font-semibold text-white">
+                Community Hub
+              </h3>
+              <p class="mt-2 text-slate-400">
+                Join support groups, share success stories, and get
+                encouragement from others on the same path.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FAQ Section -->
+      <section class="py-20 sm:py-32">
+        <div class="container mx-auto px-6">
+          <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-white sm:text-4xl">
+              Frequently Asked Questions
+            </h2>
+          </div>
+          <div class="mt-12 max-w-3xl mx-auto space-y-4">
+            <!-- Question 1 -->
+            <details
+              class="group bg-slate-800/50 p-6 rounded-lg border border-slate-700 cursor-pointer"
+            >
+              <summary
+                class="flex items-center justify-between font-semibold text-white"
+              >
+                Is the app free to use?
+                <svg
+                  class="w-5 h-5 transition-transform group-open:rotate-180"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+              <p class="mt-4 text-slate-400">
+                Yes! The core features—scoring, leaderboards, and progress
+                tracking—will always be 100% free. We plan to offer a premium
+                subscription later for advanced features like the AI Coach and
+                in-depth analytics.
+              </p>
+            </details>
+            <!-- Question 2 -->
+            <details
+              class="group bg-slate-800/50 p-6 rounded-lg border border-slate-700 cursor-pointer"
+            >
+              <summary
+                class="flex items-center justify-between font-semibold text-white"
+              >
+                How do the donations work?
+                <svg
+                  class="w-5 h-5 transition-transform group-open:rotate-180"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+              <p class="mt-4 text-slate-400">
+                When you resist an urge, we calculate the money you saved.
+                You'll have the option to donate that amount directly to our
+                partner charities and cancer research foundations through a
+                secure payment gateway. KarmaQuit does not take a cut from these
+                donations.
+              </p>
+            </details>
+            <!-- Question 3 -->
+            <details
+              class="group bg-slate-800/50 p-6 rounded-lg border border-slate-700 cursor-pointer"
+            >
+              <summary
+                class="flex items-center justify-between font-semibold text-white"
+              >
+                When will the app be available?
+                <svg
+                  class="w-5 h-5 transition-transform group-open:rotate-180"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+              <p class="mt-4 text-slate-400">
+                We are working hard to bring KarmaQuit to both iOS and Android.
+                Sign up for the waitlist to be the first to know when we launch
+                and to get exclusive early-bird access!
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+      <!-- How It Works / Features Section -->
+      <section id="features" class="mt-24 md:mt-32 max-w-5xl mx-auto">
+        <h3 class="text-3xl md:text-4xl font-bold text-white mb-16">
+          A Smarter Way to Quit
+        </h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div
+            class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 hover:border-cyan-400 transition-all hover:scale-105"
+          >
+            <div class="text-4xl mb-4">🎯</div>
+            <h4 class="text-xl font-bold text-white mb-2">Resist & Score</h4>
+            <p class="text-slate-400">
+              A simple choice with a powerful impact. Get +1 point when you
+              resist an urge and climb the ranks.
+            </p>
+          </div>
+          <!-- Feature 2 -->
+          <div
+            class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 hover:border-cyan-400 transition-all hover:scale-105"
+          >
+            <div class="text-4xl mb-4">🏆</div>
+            <h4 class="text-xl font-bold text-white mb-2">
+              Global Leaderboards
+            </h4>
+            <p class="text-slate-400">
+              Compete with friends, your city, and the world. See your name rise
+              as your willpower grows stronger.
+            </p>
+          </div>
+          <!-- Feature 3 -->
+          <div
+            class="bg-slate-800/50 p-8 rounded-xl border border-slate-700 hover:border-cyan-400 transition-all hover:scale-105"
+          >
+            <div class="text-4xl mb-4">❤️</div>
+            <h4 class="text-xl font-bold text-white mb-2">Donate & Help</h4>
+            <p class="text-slate-400">
+              Turn your victory into a good deed. Get the option to donate the
+              money you saved to a verified cancer fund.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
-
+    <!-- Final CTA Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-6 text-center">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="text-3xl font-bold text-white sm:text-4xl">
+            Ready to Begin Your Quit Journey?
+          </h2>
+          <p class="mt-4 text-lg text-slate-400">
+            Your new life starts with a single decision. Join the waitlist today
+            and be part of a community that's changing lives, one urge at a
+            time.
+          </p>
+          <a
+            href="#"
+            class="mt-8 inline-block bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold py-4 px-8 rounded-lg hover:scale-105 transition-transform duration-300 shadow-lg shadow-cyan-500/20"
+          >
+            Get Early Access
+          </a>
+        </div>
+      </div>
+    </section>
     <!-- Footer -->
     <footer class="text-center p-8 mt-16 border-t border-slate-800">
-        <p class="text-slate-500">© 2024 KarmaQuit. A new beginning awaits.</p>
+      <p class="text-slate-500">© 2024 KarmaQuit. A new beginning awaits.</p>
     </footer>
-    
-    <!-- Our Custom JavaScript -->
-    <script src="assets/js/script.js" defer></script>
-</body>
+  </body>
 </html>
