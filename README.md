@@ -1,20 +1,63 @@
-# KarmaQuit
-> A gamified mobile app to help users quit smoking through social leaderboards and charitable donations.
+KarmaQuit - The Game That Helps You Quit Smoking
+Status: In Progress
 
-## 🧠 Core Concept
+🧠 The Vision: Turn Willpower into Superpower
+KarmaQuit is a mobile app concept designed to transform the lonely, difficult journey of quitting smoking into a motivational, social, and altruistic game. Instead of just tracking stats, it uses psychological drivers like competition, loss aversion, and purpose to create a powerful, positive feedback loop.
 
-KarmaQuit transforms the difficult journey of quitting smoking into a motivational game. Instead of just tracking progress, it creates a real-time feedback loop based on your daily choices.
+✨ Key Features
+🎯 Gamified Scoring
+A simple +1 / -1 point system for every urge you face.
 
-- **Resist an Urge?** → Get **+1 Point** & climb the leaderboard.
-- **Give in to an Urge?** → Get **-1 Point**.
-- **The Karma Hook:** When you resist, you get the option to donate the money you saved to a verified cancer patient or research fund.
+🏆 Social Leaderboards
+Compete with friends, your local community, and users globally.
 
+❤️ Karma Donations
+Turn your willpower into a real-world good deed by donating saved money to cancer funds.
 
+🤖 AI-Powered Coach
+A planned 24/7 AI companion to provide motivation and support during cravings.
 
-## ✨ Key Features
+📊 Progress Analytics
+Visualize your journey with stats on money saved, health regained, and personal triggers.
 
-- **🎯 Urge-Based Scoring:** A simple, powerful system to gamify every single moment of temptation.
-- **🏆 Global & Local Leaderboards:** Compete with friends, people in your city, or users around the world for the top spot.
-- **❤️ Karma Donations:** Turn your willpower into a real-world good deed.
-- **📊 Progress Analytics:** Track your smoke-free streaks, money saved, and health improvements.
-- **🤖 AI Motivational Coach:** Get personalized support and tips when you need them most.
+🫁 Interactive "Live Lung"
+A visual representation of your healing journey that rewards your progress.
+
+🛠️ Tech Stack
+Landing Page (Current)
+HTML5
+
+Tailwind CSS
+
+JavaScript (ES6+) for interactivity
+
+Formspree for the email waitlist form
+
+Mobile App (Planned)
+Frontend: Flutter or React Native
+
+Backend: Firebase or Supabase
+
+AI Integration: OpenAI GPT API
+
+🚀 Running the Landing Page Locally
+Clone the repository
+
+Navigate to the project folder
+
+Open the index.html file in a browser
+
+Tip: Use a live server for the best experience (e.g., with the VS Code Live Server extension)
+
+📈 Project Status
+This project is in the pre-launch and validation phase. The goal is to:
+
+Communicate the core vision
+
+Gather user interest through a waitlist
+
+Collect feedback to shape the MVP development
+
+🤝 Contributing
+Although this is an early solo project, feedback is welcome. If you have ideas or notice issues with the landing page, feel free to share your thoughts.
+
