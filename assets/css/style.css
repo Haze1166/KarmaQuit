@@ -1,87 +1,101 @@
 /* --- Global Styles & Fonts --- */
-body { 
-    font-family: 'Inter', sans-serif; 
-    overflow-x: hidden; /* Prevents horizontal scroll from glowing elements */
+body {
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden; /* Prevents horizontal scroll from glowing elements */
 }
 
 /* --- Gradient & Animation Styles --- */
 .gradient-text {
-    background: linear-gradient(90deg, #38bdf8, #34d399);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #38bdf8, #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fadeInUp {
-    animation: fadeInUp 0.8s ease-out forwards;
-    opacity: 0; /* Start hidden */
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0; /* Start hidden */
 }
-.animate-delay-200 { animation-delay: 0.2s; }
-.animate-delay-400 { animation-delay: 0.4s; }
-.animate-delay-600 { animation-delay: 0.6s; }
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+.animate-delay-600 {
+  animation-delay: 0.6s;
+}
 
 /* --- Background Glow Elements --- */
 .glow {
-    position: absolute;
-    width: 24rem; /* 384px */
-    height: 24rem; /* 384px */
-    background-color: rgba(22, 163, 74, 0.1); /* Greenish glow */
-    border-radius: 9999px;
-    filter: blur(80px); /* Increased blur */
-    z-index: -10;
-    animation: spin 20s linear infinite;
+  position: absolute;
+  width: 24rem; /* 384px */
+  height: 24rem; /* 384px */
+  background-color: rgba(22, 163, 74, 0.1); /* Greenish glow */
+  border-radius: 9999px;
+  filter: blur(80px); /* Increased blur */
+  z-index: -10;
+  animation: spin 20s linear infinite;
 }
 .glow.bottom-0 {
-    background-color: rgba(37, 99, 235, 0.15); /* Bluish glow */
-    animation-direction: reverse;
+  background-color: rgba(37, 99, 235, 0.15); /* Bluish glow */
+  animation-direction: reverse;
 }
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* --- NEW: Styles for Scroll-Triggered Animations --- */
 .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .reveal.is-visible {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 /* --- Live Lung Styles --- */
 #healthy-lung-layer {
-    /* This is the magic: we create a "mask" that cuts the image from the bottom up.
-       The --healing-progress variable will be controlled by JavaScript. */
-    clip-path: inset(var(--healing-progress, 100%) 0 0 0);
-    transition: clip-path 0.1s linear; /* Smooths the slider interaction */
+  /* clip-path cuts away a portion of the image. We control the top inset value. */
+  clip-path: inset(var(--healing-progress, 100%) 0 0 0);
+  transition: clip-path 0.1s linear; /* Smooths the slider interaction slightly */
 }
 
 /* --- Styling for the Slider --- */
 #healing-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    background: #34d399; /* Healthy green color */
-    cursor: pointer;
-    border-radius: 50%;
-    border: 2px solid #fff;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #34d399;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #fff;
 }
-
 #healing-slider::-moz-range-thumb {
-    width: 20px;
-    height: 20px;
-    background: #34d399;
-    cursor: pointer;
-    border-radius: 50%;
-    border: 2px solid #fff;
+  width: 20px;
+  height: 20px;
+  background: #34d399;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #fff;
 }

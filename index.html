@@ -116,8 +116,47 @@
         <p
           class="text-sm text-slate-500 mt-4 animate-fadeInUp animate-delay-400"
         >
-          Join 1,000+ others on the waitlist. No spam, ever.
+          Join 0+ others on the waitlist. No spam, ever.
         </p>
+        <!-- Live Lung Interactive Section (Corrected for Local Images) -->
+        <div
+          id="live-lung-container"
+          class="mt-16 md:mt-20 max-w-lg mx-auto animate-fadeInUp animate-delay-600"
+        >
+          <p class="text-white font-semibold mb-4">See Your Lungs Heal</p>
+
+          <!-- Corrected Structure: Parent div with background image, child img for healthy layer -->
+          <div
+            id="live-lung"
+            class="relative w-64 h-64 mx-auto mb-4 bg-no-repeat bg-center bg-contain"
+            style="background-image: url('assets/images/lung-damaged.png')"
+          >
+            <!-- The healthy lung layer is the only direct child image. -->
+            <img
+              id="healthy-lung-layer"
+              src="assets/images/lung-healthy.png"
+              alt="Healthy Lung"
+              class="absolute inset-0 w-full h-full"
+            />
+          </div>
+
+          <!-- Interactive Slider (No changes here) -->
+          <div class="flex items-center gap-4">
+            <span class="text-sm text-slate-400">Day 0</span>
+            <input
+              id="healing-slider"
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              class="w-full h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer"
+            />
+            <span class="text-sm text-green-400">Day 30+</span>
+          </div>
+          <p class="text-xs text-slate-500 mt-2">
+            Drag the slider to simulate your healing progress.
+          </p>
+        </div>
       </section>
 
       <!-- Phone Mockup Section -->
@@ -133,13 +172,13 @@
             <!-- Mock App UI -->
             <div class="text-left">
               <h3 class="text-xl font-bold text-white">Your Streak</h3>
-              <p class="text-6xl font-black gradient-text">14</p>
+              <p class="text-6xl font-black gradient-text">??</p>
               <p class="text-slate-400">Days Smoke-Free</p>
             </div>
             <div
               class="w-full h-24 bg-gradient-to-tr from-cyan-500/20 to-blue-600/20 rounded-lg flex items-center justify-center"
             >
-              <p class="text-slate-300">Leaderboard Position: #2,341</p>
+              <p class="text-slate-300">Leaderboard Position: #1</p>
             </div>
           </div>
         </div>
@@ -410,7 +449,7 @@
     </section>
     <!-- Footer -->
     <footer class="text-center p-8 mt-16 border-t border-slate-800">
-      <p class="text-slate-500">© 2024 KarmaQuit. A new beginning awaits.</p>
+      <p class="text-slate-500">© 2025 KarmaQuit. A new beginning awaits.</p>
     </footer>
   </body>
 </html>
